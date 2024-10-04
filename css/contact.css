@@ -1,0 +1,287 @@
+/* contact.css */
+:root {
+  /* CSS HEX */
+  --yale-blue: #083763ff;          /* Replaces --marian-blue */
+  --antiflash-white: #E9EDF0ff;   /* Replaces --buff */
+  --smoky-black: #0F0806ff;       /* Replaces --kobicha */
+  --raisin-black: #151526ff;       /* Replaces --dark-moss-green */
+  --argentinian-blue: #72B0E1ff;   /* Replaces --desert-sand */
+  --bistre: #2E160Eff;            /* New color */
+  --success-green: #4CAF50;       /* New color for success indication */
+}
+
+#contact {
+  background-color: var(--argentinian-blue); /* Light background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Contact-Form {
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--argentinian-blue); /* Main background color */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.Contact-Form::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("../images/MainPage/1.jpg") no-repeat center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgba(8, 55, 99, 0.9); /* Adjusted background color */
+  box-shadow: 0px 0px 19px 5px rgba(8, 55, 99, 0.93); /* Adjusted shadow color */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.left-Picture {
+  background: url("../images/MainPage/1.jpg") no-repeat center;
+  background-size: cover;
+  height: 100%;
+  position: relative; /* Make this a positioned element for absolute children */
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  position: absolute; /* Position it relative to .left-Picture */
+  top: 40%; /* Move to the vertical center */
+  left: 50%; /* Move to the horizontal center */
+  transform: translate(-50%, -50%); /* Adjust to center exactly */
+  text-align: center; /* Center the text */
+  color: var(--antiflash-white); /* Change text color to white for better contrast */
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  padding: 10px; /* Adjust padding as necessary */
+  border-radius: 8px; /* Optional: rounded corners for overlay */
+}
+
+.contact-text {
+  font-size: 2rem; /* Adjust as needed */
+  padding: 0; /* Remove any extra padding */
+  color: var(--antiflash-white); /* White text for contrast */
+  font-weight: bold; /* Bold text */
+}
+
+.logo {
+  max-width: 450px; /* Adjust as needed */
+  margin-bottom: 10px; /* Space between logo and text */
+}
+
+.contact-text {
+  font-size: 2rem; /* Adjust as needed */
+  padding: 0 10px; /* Padding for responsiveness */
+  font-weight: bold;
+}
+
+.right-Form {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-Form h2 {
+  position: relative;
+  padding: 0 0 10px;
+  margin-bottom: 30px;
+  color: var(--argentinian-blue); /* Header color adjusted */
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'ICA Rubrik', sans-serif;
+}
+
+.right-Form h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 60px;
+  border-radius: 2px;
+  background-color: var(--argentinian-blue); /* Adjusted color */
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.field {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid var(--yale-blue); /* Change border color */
+  border-radius: 8px;
+  background-color: var(--antiflash-white); /* Background color for input */
+  transition: all 0.3s ease;
+  color: var(--smoky-black); /* Text color for inputs */
+}
+
+/* Add success effect */
+.field.success {
+  border-color: var(--success-green); /* Green border for success */
+  background-color: #59c05c80; /* Light green background */
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  padding: 0 4px;
+  color: var(--yale-blue); /* Change label color */
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.field::placeholder {
+  color: var(--bistre); /* Placeholder text color */
+  opacity: 0.8; /* Make it slightly transparent */
+}
+
+.field:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Hover state */
+}
+
+.field:focus + label,
+.field:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  color: var(--yale-blue); /* Focus label color */
+}
+
+textarea.field {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 20px;
+  background-color: var(--raisin-black); /* Button background color */
+  color: var(--antiflash-white); /* Button text color */
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--argentinian-blue); /* Optional: change this to match palette */
+  transform: translateY(-2px);
+  color: var(--raisin-black);
+  font-weight: bold;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s, opacity 1s;
+  border-radius: 50%;
+}
+
+.btn:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  transition: 0s;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 880px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+  .left-Picture {
+    height: 200px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+  }
+  .right-Form {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Contact-Form {
+    padding: 20px 10px;
+  }
+  .contact-box {
+    gap: 20px;
+  }
+  .right-Form {
+    padding: 20px;
+  }
+  .field {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+
+  .left-Picture {
+    height: 150px;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .right-Form {
+    padding: 20px;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .alert-container {
+    top: 10px;
+    width: 95%;
+  }
+
+  .alert {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .closebtn {
+    font-size: 18px;
+  }
+}

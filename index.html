@@ -1,0 +1,283 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usługi Autokarowe Pablo</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/start.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/buses.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/offer.css">
+  <link rel="stylesheet" href="css/alerts.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Alert Messages Container -->
+  <div class="alert-container" aria-live="assertive" aria-atomic="true">
+    <!-- Success Alert -->
+    <div class="alert success" id="success-alert" role="alert" style="display: none;">
+      <span class="closebtn" onclick="closeAlert('success-alert')" aria-label="Close">&times;</span> 
+      <strong>Success!</strong> Your message has been sent.
+    </div>
+    
+    <!-- Error Alert -->
+    <div class="alert error" id="error-alert" role="alert" style="display: none;">
+      <span class="closebtn" onclick="closeAlert('error-alert')" aria-label="Close">&times;</span> 
+      <strong>Error!</strong> There was a problem sending your message.
+    </div>
+  </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <div class="logo-image">
+        <button class="logo-button" data-section="home">
+          <img src="images/logo/Logo_beztla.png" alt="Autokar 1" loading="lazy">
+        </button>
+      </div>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <button class="nav-button active" data-section="home" aria-current="page">Start</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" data-section="about">O nas</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" data-section="buses">Autokary</button>
+      </li>
+      <!-- Oferta Menu with Dropdown -->
+      <li class="nav-item dropdown">
+          <button class="nav-button" data-section="oferta">Oferta</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" data-section="contact">Kontakt</button>
+      </li>
+    </ul>
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+  
+<!-- Start Section -->
+<section id="home" class="section active">
+  <div class="hero">
+    <!-- Combined wrapper for logo and content -->
+    <div class="content-wrapper">
+      <div class="logo-wrapper">
+        <img src="images/logo/Logo_beztla.png" alt="Logo" class="home-logo">
+      </div>
+      <div class="content">
+        <h1>Usługi Autokarowe Pablo</h1>
+        <h2>Paweł Waluś</h2>
+        <h3>Tel. 518 150 110</h3>
+      </div>
+    </div>
+
+    <!-- Swiper Slider -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/MainPage/1.jpg" alt="Autokar 1" loading="lazy"></div>
+        <div class="swiper-slide"><img src="images/MainPage/2.jpg" alt="Autokar 2" loading="lazy"></div>
+        <div class="swiper-slide"><img src="images/MainPage/3.jpg" alt="Autokar 3" loading="lazy"></div>
+        <div class="swiper-slide"><img src="images/MainPage/4.jpg" alt="Autokar 3" loading="lazy"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
+  
+<!-- About Us Section -->
+<section id="about" class="section">
+  <div class="content">
+    <h1>Dlaczego my?</h1>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">
+          <i class="fas fa-rocket" aria-hidden="true"></i>
+        </div>
+        <h2>Młoda, dynamiczna firma</h2>
+        <p>Jesteśmy młodą, szybko rozwijającą się firmą przewozową.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">
+          <i class="fas fa-users" aria-hidden="true"></i>
+        </div>
+        <h2>Ambitni i mili kierowcy</h2>
+        <p>Nasi kierowcy są ambitni, uprzejmi i zawsze gotowi do pomocy.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">
+          <i class="fas fa-bus" aria-hidden="true"></i>
+        </div>
+        <h2>Wygodne autobusy</h2>
+        <p>Oferujemy wygodne i nowoczesne autobusy dla Twojego komfortu.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        </div>
+        <h2>Bezpieczeństwo</h2>
+        <p>Twoje bezpieczeństwo jest dla nas najważniejsze.</p>
+      </div>
+    </div>
+    <p class="intro-text">
+      Witamy w Usługi Autokarowe Pablo - nowoczesnej firmie autokarowej, która z pasją i zaangażowaniem dostarcza niezapomniane podróże dla naszych klientów. Nasza firma powstała z marzeń o tworzeniu wyjątkowych doświadczeń podróżniczych i zapewnianiu bezpiecznych oraz wygodnych tras dla wszystkich pasażerów.
+    </p>
+  </div>
+</section>
+
+  
+    <!-- Autokary Section -->
+    <section id="buses" class="section">
+      <div class="container">
+          <!-- Bus Switcher Buttons -->
+          <div class="bus-switcher">
+              <button class="bus-btn active" data-bus="bus1">Scania Irizar 50 miejsc</button>
+              <button class="bus-btn" data-bus="bus2">Autosan Gemini 33 miejsca</button>
+              <button class="bus-btn" data-bus="bus3">Van Hool Alicron  64 miejsca</button>
+              <button class="bus-btn" data-bus="bus4">Bus Renault Trafic 8+1 miejsc</button>
+              <!-- Add more buttons for additional buses as needed -->
+          </div>
+
+          <!-- Slide -->
+          <div class="slide">
+              <div class="item">
+                  <div class="content">
+                      <div class="name"></div>
+                      <div class="des"></div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="content">
+                      <div class="name"></div>
+                      <div class="des"></div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="content">
+                      <div class="name"></div>
+                      <div class="des"></div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="content">
+                      <div class="name"></div>
+                      <div class="des"></div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="content">
+                      <div class="name"></div>
+                      <div class="des"></div>
+                  </div>
+              </div>
+          </div>
+          <!-- Navigation Buttons -->
+          <div class="button">
+              <button class="prev" aria-label="Previous Slide"><i class="fa-solid fa-arrow-left"></i></button>
+              <button class="next" aria-label="Next Slide"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+      </div>
+  </section>
+
+
+<!-- Oferta Section -->
+<section id="oferta" class="section oferta-section">
+  <div class="content">
+    <h1>Nasza Oferta</h1>
+    <p>Oferujemy:</p>
+    
+    <!-- Flex container for the lists -->
+    <div class="offer-features-container">
+      <ul class="offer-list">
+        <li>Usługi przewozowe na terenie całego kraju</li>
+        <li>Wygodne autokary turystyczne: 33 miejsca, 50 miejsc, 64 miejsca</li>
+        <li>Busa 8+1 z możliwością wynajmu</li>
+        <li class="highlighted">Możliwość wyjazdu z przewodnikiem</li>
+        <li>
+          Wszystkie potrzebne dokumenty do przewozu dzieci 
+          <a href="/pages/documents.html" class="important-link">m.in. Standardy Ochrony Małoletnich</a> <!-- Link added -->
+        </li>
+      </ul>
+
+      <ul class="features-list">
+        <li>Atrakcyjne ceny</li>
+        <li>Miła i przyjazna atmosfera</li>
+        <li>Indywidualne podejście</li>
+        <li>Sympatyczni i uprzejmi kierowcy</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  
+<!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact" class="section">
+  <div class="Contact-Form">
+    <form id="contactForm" action="submit-form.php" method="post">
+      <div class="contact-box">
+        <div class="left-Picture">
+          <!-- Logo and Center Text -->
+          <div class="center-content">
+            <img src="../images/logo/Logo_beztla2.png" alt="Logo" class="logo"> <!-- Adjust the src path to your logo -->
+            <div class="overlay">
+              <p class="contact-text">Odpowiadamy zwykle tego samego dnia, jeśli nie proszę o kontakt przez telefon nr. tel 518 150 110.</p>
+            </div>
+          </div>
+        </div>
+        <div class="right-Form">
+          <h2>Napisz do nas!</h2>
+          
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="field" required placeholder="Twoje imie i nazwisko">
+            <label for="name" class="sr-only">Imię i Nazwisko</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="email" name="email" class="field" required placeholder="Adres E-mail">
+            <label for="email" class="sr-only">Email</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" class="field" required placeholder="Twój nr.Telefonu">
+            <label for="phone" class="sr-only">Telefon</label>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="message" name="message" class="field" required placeholder="Twoja wiadomość, Proszę zawrzyj tylko najważniejsze informacje"></textarea>
+            <label for="message" class="sr-only">Twoja wiadomość</label>
+          </div>
+          
+          <button type="submit" class="btn">Wyślij</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/buses.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
