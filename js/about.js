@@ -1,9 +1,6 @@
 /* about.js */
-
 document.addEventListener('DOMContentLoaded', () => {
   const features = document.querySelectorAll('.feature');
-
-  // Example: Reveal features on scroll
   const revealFeatures = () => {
     const windowHeight = window.innerHeight;
     const revealPoint = 150;
@@ -20,5 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', revealFeatures);
-  revealFeatures(); // Initial check
+  revealFeatures();
 });

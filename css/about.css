@@ -1,4 +1,4 @@
-/* About Us Section with Updated Color Scheme */
+/* About Us Section */
 :root {
   --marian-blue: #2b4677ff;
   --buff: #c9a390ff;
@@ -9,7 +9,7 @@
 
 #about {
   position: relative;
-  background-image: url('../images/MainPage/1.jpg'); /* Kept the original background image */
+  background-image: url('../images/MainPage/1.jpg'); 
   background-size: cover;
   background-position: center;
   display: flex;
@@ -26,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay for readability */
+  background-color: rgba(0, 0, 0, 0.3); 
   z-index: 1;
 }
 
@@ -35,11 +35,7 @@
   z-index: 2;
   max-width: 1200px;
   width: 100%;
-  color: #fff; /* Kept white text color */
-}
-
-.intro-text {
-  margin-bottom: 60px;
+  color: #fff; 
 }
 
 #about h1 {
@@ -47,21 +43,18 @@
   font-size: 3rem;
   margin: 0 0 40px;
   position: relative;
-  color: #fff; /* Changed to white */
-  font-family: 'ICA Rubrik', sans-serif;
+  color: #fff; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .intro-text {
   font-size: 1.5rem;
-  margin-bottom: 60px;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
   line-height: 1.8;
   max-width: 900px;
   margin: 0 auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.1); /* Light background for contrast */
+  background: rgba(255, 255, 255, 0.1); 
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
@@ -91,7 +84,7 @@
 
 .intro-text h2 {
   font-size: 2rem;
-  color: var(--buff); /* Kept the original color for h2 */
+  color: var(--buff); 
   font-family: 'ICA Rubrik', sans-serif;
   margin-bottom: 30px;
   position: relative;
@@ -99,8 +92,7 @@
 }
 
 .intro-text p {
-  font-size: 1.3rem;
-  color: #fff; /* Changed to white */
+  font-size: 1.1rem;
   position: relative;
   z-index: 2;
   text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
@@ -135,7 +127,7 @@
 }
 
 .feature {
-  background-color: rgba(255, 255, 255, 0.1); /* Light background for contrast */
+  background-color: rgba(255, 255, 255, 0.1); 
   padding: 30px 20px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -173,7 +165,7 @@
 
 .feature .icon {
   font-size: 3rem;
-  color: var(--buff); /* Changed to buff for better visibility */
+  color: #fff; 
   margin-bottom: 20px;
   transition: transform 0.3s ease;
 }
@@ -185,13 +177,13 @@
 .feature h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #fff; /* Changed to white */
+  color: #fff; 
   transition: color 0.3s ease;
 }
 
 .feature p {
-  font-size: 1rem;
-  color: #fff; /* Changed to white */
+  font-size: 1.1rem;
+  color: #fff; 
   line-height: 1.6;
 }
 

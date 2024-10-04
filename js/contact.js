@@ -4,9 +4,9 @@ const inputs = document.querySelectorAll('.field');
 inputs.forEach(input => {
   input.addEventListener('input', () => {
     if (input.value.trim() !== '') {
-      input.classList.add('success'); // Add success class
+      input.classList.add('success'); 
     } else {
-      input.classList.remove('success'); // Remove success class if empty
+      input.classList.remove('success'); 
     }
   });
 });

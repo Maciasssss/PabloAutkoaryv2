@@ -1,18 +1,30 @@
-const url = '/documents/Standardy.pdf'; // Path to your PDF file
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('[data-section]');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const section = this.getAttribute('data-section');
 
-// Asynchronously download the PDF
+      const baseUrl = '../index.html'; 
+      const sectionId = section === 'contact' ? '#contact' : '#oferta'; 
+      window.location.href = `${baseUrl}${sectionId}`;
+    });
+  });
+});
+
+
+const url = '/documents/Standardy.pdf'; 
 const loadingTask = pdfjsLib.getDocument(url);
 loadingTask.promise.then((pdf) => {
   console.log('PDF loaded');
 
-  const pdfContainer = document.getElementById('pdf-container'); // Get the container
+  const pdfContainer = document.getElementById('pdf-container'); 
 
-  // Loop through all pages
   for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
     pdf.getPage(pageNumber).then((page) => {
       console.log('Page loaded: ' + pageNumber);
 
-      const scale = 1.5; // Scale of the PDF rendering
+      const scale = 1.5; 
       const viewport = page.getViewport({ scale: scale });
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
@@ -26,10 +38,9 @@ loadingTask.promise.then((pdf) => {
       };
       page.render(renderContext);
 
-      // Append the canvas to the container
-      pdfContainer.appendChild(canvas); // Append to the correct container
+      pdfContainer.appendChild(canvas); 
     });
   }
 }, (reason) => {
-  console.error(reason); // PDF loading error
+  console.error(reason); 
 });

@@ -1,5 +1,4 @@
 /* alerts.js */
-
 // Function to show alerts
 function showAlert(type, message) {
     const alert = document.getElementById(`${type}-alert`);
@@ -27,10 +26,9 @@ function closeAlert(id) {
     const alert = document.getElementById(id);
     if (alert) {
         alert.classList.remove('show');
-        // Hide the alert after transition
         setTimeout(() => {
             alert.style.display = 'none';
-        }, 500); // Match this duration with your CSS transition
+        }, 500); 
     }
 }
 

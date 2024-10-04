@@ -1,23 +1,22 @@
 /* alerts.css */
-
 /* Alert Container */
 .alert-container {
     position: fixed;
-    top: 20px; /* Distance from the top */
+    top: 20px; 
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 600px;
-    z-index: 10000; /* Ensure it's above other elements */
+    z-index: 10000; 
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Space between alerts */
-    pointer-events: none; /* Allow clicks through the container */
+    gap: 10px; 
+    pointer-events: none; 
 }
 
 /* Individual Alert Messages */
 .alert {
-    display: none; /* Hidden by default */
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
@@ -27,7 +26,7 @@
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    pointer-events: all; /* Enable interactions within alerts */
+    pointer-events: all; 
 }
 
 /* Show Alert */
@@ -39,12 +38,12 @@
 
 /* Success Alert Styling */
 .alert.success {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
 }
 
 /* Error Alert Styling */
 .alert.error {
-    background-color: #f44336; /* Red */
+    background-color: #f44336; 
 }
 
 /* Close Button Styling */

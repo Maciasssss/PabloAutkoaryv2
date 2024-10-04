@@ -4,22 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Standardy Ochrony Małoletnich</title>
-  
-  <link rel="stylesheet" href="../css/documents.css"> <!-- Link to your new CSS file -->
-
+  <link rel="stylesheet" href="../css/documents.css">
+  <link rel="stylesheet" href="../css/start.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-  <script src="../js/pdf.js"></script> <!-- Link to your JavaScript file -->
 </head>
 <body>
 
   <div class="nav-menu">
-    <a href="/index.html" class="back-button button">Powrót do strony głównej</a>
-    <a href="/index.html#contact" class="contact-button button">Kontakt</a> <!-- Link to Contact Us section -->
+    <div class="button-wrapper">
+      <button class="nav-button-btn-kontakt" data-section="contact">Kontakt</button>
+      <button class="nav-button-btn" data-section="oferta">Oferta</button>
+    </div>
   </div>
 
   <div class="pdf-container">
     <div id="pdf-container"></div> <!-- Container for PDF rendering -->
   </div>
 
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>This is the Kontakt section content.</p>
+  </section>
+
+  <script src="../js/pdf.js"></script> 
 </body>
 </html>

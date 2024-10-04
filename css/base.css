@@ -15,11 +15,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Root Variables */
-:root {
-  --navbar-height: 60px;
-  --footer-height: 50px;
-}
+
 
 /* Hidden Class */
 .hidden {

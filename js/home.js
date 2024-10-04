@@ -21,9 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: '.swiper-button-prev',
     },
     
-    // And if you need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
+    scrollbar: {
+       el: '.swiper-scrollbar',
+     },
   });
 });

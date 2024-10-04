@@ -1,17 +1,16 @@
 /* contact.css */
 :root {
-  /* CSS HEX */
-  --yale-blue: #083763ff;          /* Replaces --marian-blue */
-  --antiflash-white: #E9EDF0ff;   /* Replaces --buff */
-  --smoky-black: #0F0806ff;       /* Replaces --kobicha */
-  --raisin-black: #151526ff;       /* Replaces --dark-moss-green */
-  --argentinian-blue: #72B0E1ff;   /* Replaces --desert-sand */
-  --bistre: #2E160Eff;            /* New color */
-  --success-green: #4CAF50;       /* New color for success indication */
+  --yale-blue: #083763ff;         
+  --antiflash-white: #E9EDF0ff;  
+  --smoky-black: #0F0806ff;      
+  --raisin-black: #151526ff;       
+  --argentinian-blue: #72B0E1ff;   
+  --bistre: #2E160Eff;           
+  --success-green: #4CAF50;      
 }
 
 #contact {
-  background-color: var(--argentinian-blue); /* Light background color */
+  background-color: var(--argentinian-blue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +22,7 @@
   max-width: 1200px;
   justify-content: center;
   align-items: center;
-  background-color: var(--argentinian-blue); /* Main background color */
+  background-color: var(--argentinian-blue); 
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -46,8 +45,8 @@
   gap: 40px;
   width: 100%;
   max-width: 1200px;
-  background-color: rgba(8, 55, 99, 0.9); /* Adjusted background color */
-  box-shadow: 0px 0px 19px 5px rgba(8, 55, 99, 0.93); /* Adjusted shadow color */
+  background-color: rgba(8, 55, 99, 0.9); 
+  box-shadow: 0px 0px 19px 5px rgba(8, 55, 99, 0.93);
   border-radius: 15px;
   overflow: hidden;
 }
@@ -56,43 +55,43 @@
   background: url("../images/MainPage/1.jpg") no-repeat center;
   background-size: cover;
   height: 100%;
-  position: relative; /* Make this a positioned element for absolute children */
+  position: relative; 
 }
 
 .center-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  position: absolute; /* Position it relative to .left-Picture */
-  top: 40%; /* Move to the vertical center */
-  left: 50%; /* Move to the horizontal center */
-  transform: translate(-50%, -50%); /* Adjust to center exactly */
-  text-align: center; /* Center the text */
-  color: var(--antiflash-white); /* Change text color to white for better contrast */
+  align-items: center; 
+  justify-content: center; 
+  position: absolute; 
+  top: 40%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: var(--antiflash-white); 
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  padding: 10px; /* Adjust padding as necessary */
-  border-radius: 8px; /* Optional: rounded corners for overlay */
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 10px; 
+  border-radius: 8px; 
 }
 
 .contact-text {
-  font-size: 2rem; /* Adjust as needed */
-  padding: 0; /* Remove any extra padding */
-  color: var(--antiflash-white); /* White text for contrast */
-  font-weight: bold; /* Bold text */
+  font-size: 2rem; 
+  padding: 0; 
+  color: var(--antiflash-white); 
+  font-weight: bold; 
 }
 
 .logo {
-  max-width: 450px; /* Adjust as needed */
-  margin-bottom: 10px; /* Space between logo and text */
+  max-width: 450px; 
+  margin-bottom: 10px; 
 }
 
 .contact-text {
-  font-size: 2rem; /* Adjust as needed */
-  padding: 0 10px; /* Padding for responsiveness */
+  font-size: 2rem; 
+  padding: 0 10px;
   font-weight: bold;
 }
 
@@ -107,7 +106,7 @@
   position: relative;
   padding: 0 0 10px;
   margin-bottom: 30px;
-  color: var(--argentinian-blue); /* Header color adjusted */
+  color: var(--argentinian-blue); 
   text-align: center;
   font-size: 2rem;
   font-family: 'ICA Rubrik', sans-serif;
@@ -122,7 +121,7 @@
   height: 4px;
   width: 60px;
   border-radius: 2px;
-  background-color: var(--argentinian-blue); /* Adjusted color */
+  background-color: var(--argentinian-blue);
 }
 
 .form-group {
@@ -134,17 +133,16 @@
   width: 100%;
   padding: 12px 16px;
   font-size: 1rem;
-  border: 2px solid var(--yale-blue); /* Change border color */
+  border: 2px solid var(--yale-blue); 
   border-radius: 8px;
-  background-color: var(--antiflash-white); /* Background color for input */
+  background-color: var(--antiflash-white); 
   transition: all 0.3s ease;
-  color: var(--smoky-black); /* Text color for inputs */
+  color: var(--smoky-black); 
 }
 
-/* Add success effect */
 .field.success {
-  border-color: var(--success-green); /* Green border for success */
-  background-color: #59c05c80; /* Light green background */
+  border-color: var(--success-green); 
+  background-color: #59c05c80; 
 }
 
 .form-group label {
@@ -154,18 +152,18 @@
   transform: translateY(-50%);
   background-color: transparent;
   padding: 0 4px;
-  color: var(--yale-blue); /* Change label color */
+  color: var(--yale-blue); 
   pointer-events: none;
   transition: all 0.3s ease;
 }
 
 .field::placeholder {
-  color: var(--bistre); /* Placeholder text color */
-  opacity: 0.8; /* Make it slightly transparent */
+  color: var(--bistre); 
+  opacity: 0.8; 
 }
 
 .field:hover {
-  background-color: rgba(255, 255, 255, 0.9); /* Hover state */
+  background-color: rgba(255, 255, 255, 0.9); 
 }
 
 .field:focus + label,
@@ -174,7 +172,7 @@
   left: 12px;
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
-  color: var(--yale-blue); /* Focus label color */
+  color: var(--yale-blue); 
 }
 
 textarea.field {
@@ -186,8 +184,8 @@ textarea.field {
   position: relative;
   overflow: hidden;
   padding: 12px 20px;
-  background-color: var(--raisin-black); /* Button background color */
-  color: var(--antiflash-white); /* Button text color */
+  background-color: var(--raisin-black); 
+  color: var(--antiflash-white);
   font-size: 1.1rem;
   border: none;
   outline: none;
@@ -198,7 +196,7 @@ textarea.field {
 }
 
 .btn:hover {
-  background-color: var(--argentinian-blue); /* Optional: change this to match palette */
+  background-color: var(--argentinian-blue); 
   transform: translateY(-2px);
   color: var(--raisin-black);
   font-weight: bold;

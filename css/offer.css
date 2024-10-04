@@ -1,6 +1,6 @@
 /* Oferta Section Styling */
 #oferta {
-    background-image: url('../images/MainPage/1.jpg'); /* Add a suitable background image */
+    background-image: url('../images/MainPage/1.jpg'); 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -9,7 +9,10 @@
     overflow: hidden;
     padding: 100px 20px;
   }
-  
+  .button-wrapper-offer {
+    margin-bottom: 40px;
+    text-align: center; 
+  }
   #oferta::before {
     content: '';
     position: absolute;
@@ -17,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay for readability */
+    background-color: rgba(0, 0, 0, 0.3); 
     z-index: 1;
   }
   
@@ -25,24 +28,23 @@
     z-index: 2;
     max-width: 1200px;
     width: 100%;
-    color: #fff; /* White text for contrast */
+    color: #fff; 
   }
   
   #oferta h1 {
     text-align: center;
     font-size: 3rem;
-    margin: 0 0 40px;
+    margin: 0 0 20px;
     color: #fff;
-    font-family: 'ICA Rubrik', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   #oferta p {
     text-align: center;
-    font-size: 1.5rem;
-    font-family: 'Open Sans', sans-serif;
+    font-size: 1.8rem;
     line-height: 1.8;
-    margin-bottom: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
     color: #fff;
   }
   
@@ -67,32 +69,32 @@
   
  /* List items styling for Oferta and Features */
 .offer-list li, .features-list li {
-    font-size: 1.3rem; /* Adjust the font size */
-    padding: 10px 0; /* Space between list items */
-    color: #fff; /* White text for contrast */
-    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Subtle text shadow for readability */
+    font-size: 1.3rem; 
+    padding: 10px 0; 
+    color: #fff; 
+    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); 
     position: relative;
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     display: flex;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .offer-list li::before, .features-list li::before {
-    content: "\2022"; /* Unicode bullet point */
-    font-size: 2rem; /* Bigger bullet */
-    color: var(--buff); /* Change bullet color to match the color scheme */
-    margin-right: 15px; /* Space between bullet and text */
+    content: "\2022"; 
+    font-size: 2rem; 
+    color: var(--buff); 
+    margin-right: 15px; 
   }
   
   .offer-list li:hover, .features-list li:hover {
-    transform: translateX(10px); /* Slight shift on hover */
-    color: var(--buff); /* Text color change on hover */
+    transform: translateX(10px); 
+    color: var(--buff); 
   }
   
   .offer-list li:not(:last-child), .features-list li:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Light divider between items */
-    padding-bottom: 15px; /* Add space for divider */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px; 
   }
   
   .offer-list li:last-child, .features-list li:last-child {
@@ -101,22 +103,22 @@
   
   /* Add some hover effects for interaction */
   .offer-list li:hover, .features-list li:hover {
-    transform: translateX(5px); /* Move right slightly on hover */
-    color: var(--buff); /* Change text color on hover */
+    transform: translateX(5px); 
+    color: var(--buff); 
   }
   
   /* List container hover effect */
   .offer-list:hover, .features-list:hover {
-    background: rgba(255, 255, 255, 0.15); /* Change background on hover */
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); /* Slight shadow */
+    background: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); 
   }
   
   /* Special highlight for "Możliwość wyjazdu z przewodnikiem" */
 .offer-list .highlighted {
     font-weight: bold;
-    color: var(--buff); /* Same color used for headings */
+    color: var(--buff); 
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-    animation: pulse 1.5s infinite; /* Optional pulse animation */
+    animation: pulse 1.5s infinite; 
   }
   
   @keyframes pulse {
@@ -133,19 +135,17 @@
   
 .offer-list .important-link {
     position: relative;
-    z-index: 3; /* Higher than other surrounding elements */
-    color: var(--buff); /* Highlight color */
+    z-index: 3; 
+    color: var(--buff); 
     font-weight: bold;
     text-decoration: underline;
     transition: color 0.3s ease, text-shadow 0.3s ease;
   }
   
-  
   .offer-list .important-link:hover {
-    color: var(--kobicha); /* Slight change on hover */
+    color: #fff; 
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   }
-  
   
   .offer-list::before, .features-list::before {
     pointer-events: none;
@@ -166,22 +166,13 @@
     background: rgba(255, 255, 255, 0.15);
   }
   
-  #oferta h2 {
-    font-size: 2rem;
-    color: var(--buff);
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
-  }
-.offer-features-container {
-    display: flex;
-    justify-content: space-between; /* Space between the lists */
-    gap: 40px; /* Add some space between the two lists */
-    flex-wrap: wrap; /* Ensure lists wrap on smaller screens */
-  }
+  .offer-features-container {
+      display: flex;
+      justify-content: space-between; 
+      gap: 40px; 
+      flex-wrap: wrap; 
+    }
   
-  /* Make both lists take equal space */
   .offer-list, .features-list {
     flex: 1;
     list-style: none;
@@ -192,7 +183,7 @@
   /* Ensure proper responsiveness */
   @media (max-width: 1024px) {
     .offer-features-container {
-      flex-direction: column; /* Stack lists on smaller screens */
+      flex-direction: column; 
     }
   }
   
