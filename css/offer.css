@@ -208,7 +208,6 @@
     justify-content: flex-start; 
     padding: 60px 15px 60px 15px; 
     padding-top: 100px; 
-    min-height: auto; 
     height: auto; 
     overflow-y: visible; 
   }
@@ -223,8 +222,6 @@
     margin-bottom: 40px; 
     font-size: 1rem; 
     max-width: 100%; 
-    height: auto; /* Allows automatic height adjustment */
-    max-height: 400px; /* Set a max height for scrolling */
     overflow-y: auto; /* Enables scrolling if content exceeds the max height */
   }
 
@@ -264,9 +261,11 @@
     font-size: 1.3rem;
     margin-bottom: 10px;
   }
-  .offer-list, .features-list {
+  .offer-list {
     font-size: 0.9rem;
     padding: 15px;
+    overflow-y: auto;
+    max-height: 300px;
   }
 
   .offer-list li, .features-list li {

@@ -1,18 +1,23 @@
-  // Function to move features list items right after the last offer list item for small screens
+
+  let isMerged = false;
+
   function mergeListsForMobile() {
     const offerList = document.querySelector('.offer-list');
     const featuresList = document.querySelector('.features-list');
-    
-    if (window.innerWidth <= 480 && featuresList && offerList) {
+
+    if (window.innerWidth <= 480 && featuresList && offerList && !isMerged) {
       const offerItems = offerList.querySelectorAll('li');
-      const lastOfferItem = offerItems[offerItems.length - 2]; 
+      const secondToLastOfferItem = offerItems[offerItems.length - 2];
 
       const featuresItems = featuresList.querySelectorAll('li');
       featuresItems.forEach(item => {
-        lastOfferItem.insertAdjacentElement('afterend', item.cloneNode(true)); 
+        secondToLastOfferItem.insertAdjacentElement('afterend', item.cloneNode(true)); 
       });
+
+      isMerged = true;
     }
   }
 
   window.addEventListener('load', mergeListsForMobile);
   window.addEventListener('resize', mergeListsForMobile);
+
