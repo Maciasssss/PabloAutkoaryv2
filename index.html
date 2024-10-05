@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usługi Autokarowe Pablo</title>
+  <title>Pablo Autokary</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/start.css">
@@ -24,6 +24,7 @@
    wynajem autokarów na wycieczki szkolne, przewozy autokarowe dla firm, autokary na wyjazdy służbowe, przewozy dla dzieci, przewozy dla seniorów, 
    przewozy na koncerty,  przewozy dla turystów, autokary na wycieczki objazdowe, przewozy dla grup zorganizowanych, przewozy na konferencje,
    przewozy dla uczniów, przewozy autokarowe na imprezy okolicznościowe,"/>
+   <link rel="shortcut icon" href="images/logo/Logo_beztla3.png" />
 </head>
 <body>
   <!-- Alert Messages Container -->
@@ -31,13 +32,10 @@
     <!-- Success Alert -->
     <div class="alert success" id="success-alert" role="alert" style="display: none;">
       <span class="closebtn" onclick="closeAlert('success-alert')" aria-label="Close">&times;</span> 
-      <strong>Success!</strong> Your message has been sent.
     </div>
-    
     <!-- Error Alert -->
     <div class="alert error" id="error-alert" role="alert" style="display: none;">
       <span class="closebtn" onclick="closeAlert('error-alert')" aria-label="Close">&times;</span> 
-      <strong>Error!</strong> There was a problem sending your message.
     </div>
   </div>
 
@@ -154,18 +152,18 @@
             <!-- Bus Switcher Toggle for Mobile -->
             <button class="bus-switcher-toggle" aria-controls="bus-switcher-menu" aria-expanded="false" aria-label="Toggle bus selection menu">
               <i class="fa-solid fa-bus"></i>
-              <span>Select Bus</span>
+              <span>Wybierz autobus</span>
             </button>
             <!-- Bus Switcher Menu -->
             <div class="bus-switcher-menu" id="bus-switcher-menu">
               <!-- Bus Buttons -->
               <button class="bus-btn active" data-bus="bus1">
                 <i class="fa-solid fa-bus"></i>
-                <span>Scania Irizar 50 miejsc</span>
+                <span>Autosan Gemini 33 miejsca</span>Scania Irizar 50 miejsc
               </button>
               <button class="bus-btn" data-bus="bus2">
                 <i class="fa-solid fa-bus"></i>
-                <span>Autosan Gemini 33 miejsca</span>
+                <span>Scania Irizar 50 miejsc</span>
               </button>
               <button class="bus-btn" data-bus="bus3">
                 <i class="fa-solid fa-bus"></i>
@@ -242,7 +240,6 @@
       <p>Oferujemy:</p>
       <div class="button-wrapper-offer">
         <button class="nav-button-btn-kontakt" data-section="contact">Kontakt</button>
-        <button class="nav-button-btn" data-section="oferta">Oferta</button>
       </div>
       <!-- Flex container for the lists -->
       <div class="offer-features-container">
@@ -315,5 +312,6 @@
   <script src="js/buses.js"></script>
   <script src="js/alerts.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/offer.js"></script>
 </body>
 </html>

@@ -55,13 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.text().then(text => { throw new Error(text) });
         })
         .then(data => {
-            // Show success alert with server response
-            showAlert('success', data);
             form.reset();
         })
         .catch(error => {
-            // Show error alert with error message
-            showAlert('error', error.message || 'There was a problem sending your message.');
             console.error('Error:', error);
         });
     });

@@ -51,6 +51,7 @@
   font-weight: bold;
   margin-bottom: 20px;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Offer and Features Lists Styling */
@@ -222,6 +223,9 @@
     margin-bottom: 40px; 
     font-size: 1rem; 
     max-width: 100%; 
+    height: auto; /* Allows automatic height adjustment */
+    max-height: 400px; /* Set a max height for scrolling */
+    overflow-y: auto; /* Enables scrolling if content exceeds the max height */
   }
 
   .offer-list li, .features-list li {
@@ -249,12 +253,17 @@
   #oferta h1 {
     font-size: 1.6rem;
   }
-
+  #oferta .content {
+    position: relative; 
+    z-index: 2; 
+  }
+  .features-list {
+    display: none; /* Hide the features list */
+  }
   #oferta p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
   }
-
   .offer-list, .features-list {
     font-size: 0.9rem;
     padding: 15px;

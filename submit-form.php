@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content .= "Wiadomość:\n$message\n";
 
     // Build the email headers
-    $email_headers = "Pabloautokary wiadomość od : $name <$email>";
+    $email_headers = "From: Pabloautokary wiadomość od : $name <$email>";
 
     // Send the email
     if (mail($recipient, $subject, $email_content, $email_headers)) {

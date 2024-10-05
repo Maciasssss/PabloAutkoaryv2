@@ -214,7 +214,7 @@
   {
     display: none;
   }
-  
+ 
   #buses .bus-switcher-menu .bus-btn {
     width: 100% !important;
     margin: 10px 0 !important;
@@ -224,6 +224,9 @@
     text-align: center !important;
     border-radius: 20px !important;
     align-items: center !important;
+}
+#buses .slide .item:nth-child(3) {
+  left: 90%;
 }
 }
 

@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let touchEndX = 0;
 
     const busData = {
-        bus1: [
+        bus2: [
             {
-                image: 'images/Scania_irizar/1.jpg',
+                image: 'images/Scania_Irizar/1.jpg',
                 name: 'Scania Irizar - Widok z przodu',
             },
             {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Scania Irizar - Korytarz',
             }
         ],
-        bus2: [
+        bus1: [
             {
                 image: 'images/Autosan_Gemini/1.jpg',
                 name: 'Autosan Gemini - Widok z przodu',
@@ -87,31 +87,31 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 image: 'images/Van_Hool/2.jpg',
-                name: 'Scania Irizar - Widok z boku',
+                name: 'Van Hool - Widok z boku',
             },
             {
                 image: 'images/Van_Hool/3.jpg',
-                name: 'Scania Irizar - Widok z tyłu',
+                name: 'Van Hool - Widok z tyłu',
             },
             {
                 image: 'images/Van_Hool/4.jpg',
-                name: 'Scania Irizar - Widok z boku',
+                name: 'Van Hool - Widok z boku',
             },
             {
                 image: 'images/Van_Hool/5.jpg',
-                name: 'Scania Irizar - Wnętrze',
+                name: 'Van Hool - Wnętrze',
             },
             {
                 image: 'images/Van_Hool/6.jpg',
-                name: 'Scania Irizar - Pablo',
+                name: 'Van Hool - Pablo',
             },
             {
                 image: 'images/Van_Hool/7.jpg',
-                name: 'Scania Irizar - Siedzenia',
+                name: 'Van Hool - Siedzenia',
             },
             {
                 image: 'images/Van_Hool/8.jpg',
-                name: 'Scania Irizar - Siedzenia',
+                name: 'Van Hool - Siedzenia',
             }
         ],
         // Add more bus data here...
