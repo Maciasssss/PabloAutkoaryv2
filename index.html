@@ -151,9 +151,27 @@
       <div class="container">
           <!-- Bus Switcher Buttons -->
           <div class="bus-switcher">
-              <button class="bus-btn active" data-bus="bus1">Scania Irizar 50 miejsc</button>
-              <button class="bus-btn" data-bus="bus2">Autosan Gemini 33 miejsca</button>
-              <button class="bus-btn" data-bus="bus3">Van Hool Alicron  64 miejsca</button>
+            <!-- Bus Switcher Toggle for Mobile -->
+            <button class="bus-switcher-toggle" aria-controls="bus-switcher-menu" aria-expanded="false" aria-label="Toggle bus selection menu">
+              <i class="fa-solid fa-bus"></i>
+              <span>Select Bus</span>
+            </button>
+            <!-- Bus Switcher Menu -->
+            <div class="bus-switcher-menu" id="bus-switcher-menu">
+              <!-- Bus Buttons -->
+              <button class="bus-btn active" data-bus="bus1">
+                <i class="fa-solid fa-bus"></i>
+                <span>Scania Irizar 50 miejsc</span>
+              </button>
+              <button class="bus-btn" data-bus="bus2">
+                <i class="fa-solid fa-bus"></i>
+                <span>Autosan Gemini 33 miejsca</span>
+              </button>
+              <button class="bus-btn" data-bus="bus3">
+                <i class="fa-solid fa-bus"></i>
+                <span>Van Hool Alicron 64 miejsca</span>
+              </button>
+            </div>
           </div>
           <div class="slide">
               <div class="item">

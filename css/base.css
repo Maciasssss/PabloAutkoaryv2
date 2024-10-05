@@ -1,6 +1,4 @@
 /* base.css */
-
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -14,30 +12,10 @@ html, body {
   background-color: #f0f4f8;
   overflow-x: hidden;
 }
-
-
-
-/* Hidden Class */
 .hidden {
   display: none;
 }
-
-/* Screen Reader Only */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Section Styling */
 .section {
-  /* Keep these properties */
   position: fixed; 
   top: 0;
   left: 0;
@@ -47,13 +25,25 @@ html, body {
   padding-bottom: var(--footer-height);
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Start hidden */
+  opacity: 0; 
   transition: opacity 0.5s ease-in-out;
-  z-index: -1; /* Stack sections below the active one */
+  z-index: -1; 
 }
 
 .section.active {
-  opacity: 1; /* Show the active section */
-  z-index: 1; /* Bring the active section to the front */
+  opacity: 1; 
+  z-index: 1; 
 }
-
+@media screen and (max-width: 768px) {
+  .section {
+    height: auto; 
+    min-height: 100vh; 
+    padding-top: calc(var(--navbar-height) + 20px); 
+    padding-bottom: 20px; 
+    z-index: auto; 
+  }
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

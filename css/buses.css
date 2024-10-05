@@ -20,6 +20,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5); 
+  z-index: 0; 
 }
 
 #buses .container {
@@ -33,6 +34,7 @@
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   overflow: hidden;
+  z-index: 1; /* Ensure it stays above the overlay */
 }
 
 /* Slide */
@@ -91,7 +93,7 @@
   position: absolute;
   top: 50%;
   left: 100px;
-  width: 200px;
+  width: 250px;
   text-align: left;
   color: rgba(241, 241, 245, 0.95);
   transform: translate(0, -50%);
@@ -149,88 +151,184 @@
   background: rgba(0, 4, 40, 0.95);
   color: #fff;
 }
+
 /* Responsive Adjustments */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   #buses .container {
-    width: 800px;
-    height: 500px;
+    width: 95%;
+  }
+
+  #buses .item {
+    width: 180px;
+    height: 270px;
   }
 
   #buses .content .name {
-    font-size: 35px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  #buses .container {
-    width: 600px;
-    height: 400px;
+  #buses .slide {
+    gap: 15px;
   }
 
-  #buses .content {
-    left: 50px;
-    width: 200px;
+  #buses .item {
+    width: 45%;
+    height: auto;
+    aspect-ratio: 2 / 3;
   }
 
   #buses .content .name {
-    font-size: 30px;
+    font-size: 0.9rem;
+  }
+
+  #buses .button button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  #buses .bus-switcher button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+  #buses .slide .item:nth-child(2) .content 
+  {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
-  #buses .container {
-    width: 300px;
-    height: 300px;
+  #buses .item {
+    width: 100%;
   }
-
-  #buses .content {
-    left: 20px;
-    width: 150px;
+  #buses .button button,
+  #buses .bus-switcher button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
-
-  #buses .content .name {
-    font-size: 20px;
+  #buses .button .nav-button-btn-kontakt {
+    width: 200px;
   }
-
-  #buses .content .des {
-    font-size: 14px;
+  #buses .slide .item:nth-child(2) .content 
+  {
+    display: none;
   }
-
-  #buses .content button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
+  
+  #buses .bus-switcher-menu .bus-btn {
+    width: 100% !important;
+    margin: 10px 0 !important;
+    padding: 10px !important;
+    font-size: 0.9rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    align-items: center !important;
+}
 }
 
 /* Additional styling for bus switcher inside autokary section */
+/* Bus Switcher */
 #buses .bus-switcher {
+  position: relative;
   text-align: center;
   border-radius: 5px; 
   background: linear-gradient(135deg, rgba(0, 4, 40, 0.95), rgba(0, 4, 40, 0.85));
+  padding: 10px;
 }
-#buses .bus-switcher button {
+
+/* Bus Switcher Toggle Button */
+#buses .bus-switcher-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#buses .bus-switcher-toggle i {
+  margin-right: 8px;
+}
+
+
+#buses .bus-switcher-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 2; 
+}
+
+#buses .bus-switcher-menu .bus-btn {
   display: inline-block;
-  padding: 6px 15px;
-  margin: 20px;
-  font-size: 1.8rem;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  font-size: 1rem;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
-  text-decoration: none;
   border-radius: 30px;
-  position: relative;
-  background-size: 200% 200%; 
-  transition: background-position 0.5s ease, transform 0.3s ease;
   background: linear-gradient(135deg, rgba(0, 4, 40, 0.95), rgba(0, 4, 40, 0.85));
-  animation: gradientShift 3s ease infinite;
+  transition: background-position 0.5s ease, transform 0.3s ease;
   border: 2px solid #fff;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
 
-#buses .bus-switcher button:hover {
+#buses .bus-switcher-menu .bus-btn i {
+  margin-right: 8px;
+}
+
+#buses .bus-switcher-menu .bus-btn:hover {
   box-shadow: 0 0 40px rgba(255, 255, 255, 1); 
-  transform: scale(1.2); 
+  transform: scale(1.1); 
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Show the bus-switcher-toggle on mobile */
+  #buses .bus-switcher-toggle {
+    display: inline-block;
+  }
+  /* Hide the prev and next buttons */
+  #buses .button .prev,
+  #buses .button .next {
+    display: none;
+  }
+  #buses .content .name,
+  #buses .item .content {
+    display: none;
+  }
+  /* Hide the bus-switcher-menu by default on mobile */
+  #buses .bus-switcher-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(0, 4, 40, 0.95), rgba(0, 4, 40, 0.85));
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  /* Show the bus-switcher-menu when active */
+  #buses .bus-switcher.active .bus-switcher-menu {
+    display: flex;
+  }
+
+  /* Adjust bus buttons in mobile menu */
+  #buses .bus-switcher-menu .bus-btn {
+    width: 100%;
+    margin: 5px 0;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  /* Hide the 'Oferta' button on mobile */
+  #buses .button .nav-button-btn {
+    display: none;
+  }
 }
 
 /* Animations */

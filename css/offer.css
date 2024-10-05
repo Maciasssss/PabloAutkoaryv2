@@ -1,227 +1,273 @@
 /* Oferta Section Styling */
 #oferta {
-    background-image: url('../images/MainPage/1.jpg'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 100px 20px;
-  }
-  .button-wrapper-offer {
-    margin-bottom: 40px;
-    text-align: center; 
-  }
-  #oferta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); 
-    z-index: 1;
-  }
-  
-  #oferta .content {
-    z-index: 2;
-    max-width: 1200px;
-    width: 100%;
-    color: #fff; 
-  }
-  
-  #oferta h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin: 0 0 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  #oferta p {
-    text-align: center;
-    font-size: 1.8rem;
-    line-height: 1.8;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  .offer-list, .features-list {
-    font-size: 1.3rem;
-    padding: 0;
-    margin: 0 0 60px;
-    list-style: none;
-    text-align: left;
-    max-width: 900px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  }
-  
- /* List items styling for Oferta and Features */
+  background-image: url('../images/MainPage/1.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  min-height: calc(100vh - 60px); /* Assuming navbar is 60px high on desktop */
+}
+
+.button-wrapper-offer {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#oferta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1;
+}
+#oferta::before,
+#oferta::after {
+  pointer-events: none; /* Allow interactions to pass through */
+}
+#oferta .content {
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  color: #fff;
+}
+
+#oferta h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0 0 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#oferta p {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Offer and Features Lists Styling */
+.offer-list, .features-list {
+  font-size: 1.3rem;
+  padding: 20px;
+  margin: 0 auto 60px;
+  list-style: none;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  line-height: 1.6; /* Improved readability */
+}
+
 .offer-list li, .features-list li {
-    font-size: 1.3rem; 
-    padding: 10px 0; 
-    color: #fff; 
-    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); 
-    position: relative;
-    list-style-type: none; 
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .offer-list li::before, .features-list li::before {
-    content: "\2022"; 
-    font-size: 2rem; 
-    color: var(--buff); 
-    margin-right: 15px; 
-  }
-  
-  .offer-list li:hover, .features-list li:hover {
-    transform: translateX(10px); 
-    color: var(--buff); 
-  }
-  
-  .offer-list li:not(:last-child), .features-list li:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 15px; 
-  }
-  
-  .offer-list li:last-child, .features-list li:last-child {
-    padding-bottom: 0;
-  }
-  
-  /* Add some hover effects for interaction */
-  .offer-list li:hover, .features-list li:hover {
-    transform: translateX(5px); 
-    color: var(--buff); 
-  }
-  
-  /* List container hover effect */
-  .offer-list:hover, .features-list:hover {
-    background: rgba(255, 255, 255, 0.15); 
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); 
-  }
-  
-  /* Special highlight for "Możliwość wyjazdu z przewodnikiem" */
+  font-size: 1.3rem;
+  padding: 15px 0;
+  color: #fff;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.6;
+}
+
+.offer-list li::before, .features-list li::before {
+  content: "\2022";
+  font-size: 2rem;
+  color: var(--buff);
+  margin-right: 15px;
+}
+
+.offer-list li:hover, .features-list li:hover {
+  transform: translateX(10px);
+  color: var(--buff);
+}
+
+.offer-list li:not(:last-child), .features-list li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 15px;
+}
+
+.offer-list li:last-child, .features-list li:last-child {
+  padding-bottom: 0;
+}
+
+/* Add some hover effects for interaction */
+.offer-list li:hover, .features-list li:hover {
+  transform: translateX(5px);
+  color: var(--buff);
+}
+
+/* List container hover effect */
+.offer-list:hover, .features-list:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Special highlight for "Możliwość wyjazdu z przewodnikiem" */
 .offer-list .highlighted {
-    font-weight: bold;
-    color: var(--buff); 
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-    animation: pulse 1.5s infinite; 
+  font-weight: bold;
+  color: var(--buff);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
+  50% {
+    transform: scale(1.05);
   }
-  
+  100% {
+    transform: scale(1);
+  }
+}
+
 .offer-list .important-link {
-    position: relative;
-    z-index: 3; 
-    color: var(--buff); 
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  z-index: 3;
+  color: var(--buff);
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.offer-list .important-link:hover {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.offer-features-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.offer-list, .features-list {
+  flex: 1;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1024px) and (max-width: 1440px)
+{
+  #oferta h1 {
+    display: none;
   }
-  
-  .offer-list .important-link:hover {
-    color: #fff; 
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+
+  #oferta p {
+    display: none;
   }
-  
-  .offer-list::before, .features-list::before {
-    pointer-events: none;
-    content: '';
-    position: absolute;
+}
+/* Tablets and Small Desktops */
+@media (max-width: 1023px) {
+  #oferta h1 {
+    font-size: 2.5rem;
+  }
+
+  #oferta p {
+    font-size: 1.5rem;
+  }
+
+  .offer-list, .features-list {
+    padding: 30px;
+    font-size: 1.1rem;
+  }
+
+  .offer-features-container {
+    gap: 30px;
+  }
+
+  .nav-button-btn-kontakt,
+  .nav-button-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  #oferta {
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    padding: 60px 15px 60px 15px; 
+    padding-top: 100px; 
+    min-height: auto; 
+    height: auto; 
+    overflow-y: visible; 
+  }
+
+  .offer-features-container {
+    flex-direction: column; 
+    gap: 20px; 
+  }
+
+  .offer-list, .features-list {
+    padding: 20px; 
+    margin-bottom: 40px; 
+    font-size: 1rem; 
+    max-width: 100%; 
+  }
+
+  .offer-list li, .features-list li {
+    font-size: 1rem; 
+    padding: 10px 0; 
+  }
+
+  .nav-button-btn-kontakt,
+  .nav-button-btn {
+    width: 100%; 
+    margin: 5px 0; 
+  }
+
+  #oferta::before,
+  #oferta::after {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-    mix-blend-mode: overlay;
-    z-index: 1;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; 
   }
-  
-  .offer-list:hover, .features-list:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.15);
+}
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  #oferta h1 {
+    font-size: 1.6rem;
   }
-  
-  .offer-features-container {
-      display: flex;
-      justify-content: space-between; 
-      gap: 40px; 
-      flex-wrap: wrap; 
-    }
-  
+
+  #oferta p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
   .offer-list, .features-list {
-    flex: 1;
-    list-style: none;
-    padding: 20px;
-    margin: 0;
+    font-size: 0.9rem;
+    padding: 15px;
   }
-  
-  /* Ensure proper responsiveness */
-  @media (max-width: 1024px) {
-    .offer-features-container {
-      flex-direction: column; 
-    }
+
+  .offer-list li, .features-list li {
+    font-size: 0.9rem;
+    padding: 8px 0;
   }
-  
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+  .nav-button-btn-kontakt,
+  .nav-button-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
-  
-  @media (max-width: 1023px) {
-    #oferta h1 {
-      font-size: 2.5rem;
-    }
-  
-    .offer-list, .features-list {
-      font-size: 1.2rem;
-      padding: 30px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    #oferta h1 {
-      font-size: 2rem;
-    }
-  
-    .offer-list, .features-list {
-      font-size: 1.1rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    #oferta h1 {
-      font-size: 1.8rem;
-    }
-  
-    .offer-list, .features-list {
-      font-size: 1rem;
-      padding: 20px;
-    }
-  }
-  
+}
