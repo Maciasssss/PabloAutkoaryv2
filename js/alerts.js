@@ -4,11 +4,7 @@ function showAlert(type, message) {
     const alert = document.getElementById(`${type}-alert`);
     if (alert) {
         // Update the message content
-        alert.querySelector('strong').textContent = type === 'success' ? 'Success!' : 'Error!';
-        const messageText = alert.querySelector('strong').nextSibling;
-        if (messageText) {
-            messageText.textContent = ` ${message}`;
-        }
+        alert.innerHTML = `<strong>${type === 'success' ? ' ' : ' '}</strong> ${message}`;
 
         // Display the alert
         alert.style.display = 'flex';
@@ -43,22 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         fetch('submit-form.php', {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json'
-            },
             body: formData
         })
-        .then(response => {
-            if (response.ok) {
-                return response.text();
-            }
-            return response.text().then(text => { throw new Error(text) });
-        })
+        .then(response => response.json())
         .then(data => {
-            form.reset();
+            if (data.success) {
+                showAlert('success', data.message);
+                form.reset();
+            } else {
+                showAlert('error', data.message);
+            }
         })
         .catch(error => {
             console.error('Error:', error);
+            showAlert('error', 'An unexpected error occurred. Please try again later.');
         });
     });
 });

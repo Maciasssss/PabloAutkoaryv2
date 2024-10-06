@@ -1,7 +1,13 @@
 <?php
 // submit-form.php
 
-// Check if the form was submitted via POST
+header('Content-Type: application/json');
+
+function sendJsonResponse($success, $message) {
+    echo json_encode(['success' => $success, 'message' => $message]);
+    exit;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize and validate input data
     $name = strip_tags(trim($_POST["name"]));
@@ -11,23 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check that all required fields are filled out
     if (empty($name) || empty($email) || empty($phone) || empty($message)) {
-        http_response_code(400);
-        echo "Proszę wypełnij wszystkie pola i spróbuj jeszcze raz.";
-        exit;
+        sendJsonResponse(false, "Proszę wypełnij wszystkie pola i spróbuj jeszcze raz.");
     }
 
     // Validate message length (at least 100 characters)
     if (strlen($message) < 100) {
-        http_response_code(400);
-        echo "Twoja wiadomość musi zawierać przynajmniej 100 znaków.";
-        exit;
+        sendJsonResponse(false, "Twoja wiadomość musi zawierać przynajmniej 100 znaków.");
     }
 
     // Validate phone number format (Polish format)
     if (!preg_match("/^(\+48[0-9]{9}|0[0-9]{9}|[0-9]{9})$/", $phone)) {
-        http_response_code(400);
-        echo "Proszę podaj poprawny numer telefonu.";
-        exit;
+        sendJsonResponse(false, "Proszę podaj poprawny numer telefonu.");
     }
 
     // Set the recipient email address
@@ -47,15 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send the email
     if (mail($recipient, $subject, $email_content, $email_headers)) {
-        http_response_code(200);
-        echo "Dziękuje! Twoja wiadomość została przesłana. Postaramy się odpowiedzieć jak najszybciej :), życzymy miłego dnia Pablo autokary!!!.";
+        sendJsonResponse(true, "Dziękuje! Twoja wiadomość została przesłana. Postaramy się odpowiedzieć jak najszybciej :), życzymy miłego dnia Pablo autokary!!!.");
     } else {
-        http_response_code(500);
-        echo "Oops! Coś poszło nie tak, spróbuj jeszcze raz później.";
+        sendJsonResponse(false, "Oops! Coś poszło nie tak, spróbuj jeszcze raz później.");
     }
 } else {
-    // Not a POST request, set a 405 (Method Not Allowed) response code
-    http_response_code(405);
-    echo "Method Not Allowed";
+    sendJsonResponse(false, "Method Not Allowed");
 }
 ?>

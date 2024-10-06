@@ -7,7 +7,6 @@
   justify-content: center;
   align-items: center;
   padding: 100px 20px;
-  min-height: calc(100vh - 60px); /* Assuming navbar is 60px high on desktop */
 }
 
 .button-wrapper-offer {
@@ -164,41 +163,101 @@
 }
 
 /* Responsive Adjustments */
-@media (min-width: 1024px) and (max-width: 1440px)
+@media (max-width: 1024px) 
 {
+  #oferta {
+    padding: 80px 20px; 
+  }
+  #oferta .content .content1
+  {
+    display: flex;
+    margin-top: 30px;
+    gap: 30px;
+  }
   #oferta h1 {
-    display: none;
+    font-size: 2.3rem; 
+    margin: 0 0 15px; 
+    text-align: center; 
   }
 
   #oferta p {
     display: none;
   }
-}
-/* Tablets and Small Desktops */
-@media (max-width: 1023px) {
-  #oferta h1 {
-    font-size: 2.5rem;
-  }
 
-  #oferta p {
-    font-size: 1.5rem;
+  .button-wrapper-offer {
+    margin-bottom: 20px;
+    text-align: center;
   }
 
   .offer-list, .features-list {
-    padding: 30px;
-    font-size: 1.1rem;
+    padding: 30px; 
+    font-size: 1.2rem; 
+    max-height: 500px; 
+    overflow-y: auto; 
   }
 
   .offer-features-container {
-    gap: 30px;
+    flex-direction: row; 
+    gap: 30px; 
+    align-items: flex-start; 
+  }
+
+  .offer-list li, .features-list li {
+    padding: 12px 0; 
   }
 
   .nav-button-btn-kontakt,
   .nav-button-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 12px 25px; 
+    font-size: 1rem; 
   }
 }
+/* Tablets and Small Desktops */
+@media (min-width: 768px) and (max-width: 1023px){
+  #oferta {
+    padding: 80px 20px; 
+  }
+  #oferta .content .content1
+  {
+    margin-top: 30px;
+    gap: 30px;
+  }
+  #oferta h1 {
+    font-size: 2.3rem; 
+    margin: 0 0 15px; 
+    text-align: center; 
+  }
+
+  
+  .button-wrapper-offer {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .offer-list, .features-list {
+    padding: 30px; 
+    font-size: 1.2rem; 
+    max-height: 500px; 
+    overflow-y: auto; 
+  }
+
+  .offer-features-container {
+    flex-direction: row; 
+    gap: 30px; 
+    align-items: flex-start; 
+  }
+
+  .offer-list li, .features-list li {
+    padding: 12px 0; 
+  }
+
+  .nav-button-btn-kontakt,
+  .nav-button-btn {
+    padding: 12px 25px; 
+    font-size: 1rem; 
+  }
+}
+
 
 /* Mobile Devices */
 @media (max-width: 768px) {
@@ -216,13 +275,17 @@
     flex-direction: column; 
     gap: 20px; 
   }
-
-  .offer-list, .features-list {
+  .features-list
+  {
+    display: none;
+  }
+  .offer-list{
     padding: 20px; 
     margin-bottom: 40px; 
     font-size: 1rem; 
     max-width: 100%; 
     overflow-y: auto; /* Enables scrolling if content exceeds the max height */
+    max-height: 400px;
   }
 
   .offer-list li, .features-list li {
@@ -265,7 +328,7 @@
     font-size: 0.9rem;
     padding: 15px;
     overflow-y: auto;
-    max-height: 300px;
+    max-height: 400px;
   }
 
   .offer-list li, .features-list li {

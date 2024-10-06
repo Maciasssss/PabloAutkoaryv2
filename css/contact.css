@@ -226,7 +226,30 @@ textarea.field {
   .contact-box {
     grid-template-columns: 1fr;
   }
-
+  .center-content {
+    transform: none;
+    padding: 20px 0;
+    text-align: center;
+    top: 40%;
+    left: 0%;
+    justify-content: center;
+  }
+  #contact {
+    padding: 40px 15px;
+}
+  .contact-text {
+    font-size: 1.5rem;
+    padding: 0 10px;
+    font-weight: bold;
+    width: 100%;
+}
+#contact .logo {
+  display: none;
+}
+.overlay{
+  width: 100%;
+  
+}
   .left-Picture {
     height: 250px;
     border-radius: 15px 15px 0 0;
@@ -251,6 +274,7 @@ textarea.field {
   #contact {
     padding: 40px 15px;
   }
+
   #contact .logo {
     display: none;
   }
@@ -269,15 +293,14 @@ textarea.field {
   }
 
   .center-content {
-    position: static; 
     transform: none;
     padding: 20px 0;
     text-align: center;
+    top: 20%;
+    left: 0%;
+    justify-content: center;
   }
 
-  .contact-text {
-    font-size: 1.5rem;
-  }
 
   .logo {
     max-width: 80%;
@@ -320,7 +343,14 @@ textarea.field {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-
+  .center-content {
+    transform: none;
+    padding: 20px 0;
+    text-align: center;
+    top: 0%;
+    left: 0%;
+    justify-content: center;
+  }
   .left-Picture {
     height: 150px;
     border-radius: 15px 15px 0 0;

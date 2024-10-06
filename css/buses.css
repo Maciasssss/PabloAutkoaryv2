@@ -42,6 +42,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  
 }
 
 /* Bus Items */
@@ -152,27 +153,123 @@
   color: #fff;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  #buses .container {
-    width: 95%;
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  /* Adjust navigation buttons */
+  #buses .button button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
   }
 
-  #buses .item {
-    width: 180px;
-    height: 270px;
+  /* Adjust bus switcher buttons */
+  #buses .bus-switcher button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
   }
 
-  #buses .content .name {
+  /* Show the bus-switcher-toggle button */
+  #buses .bus-switcher-toggle {
+    display: inline-block !important;
+    color: #fff;
+    border: none;
     font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 30px;
+    width: 100%; /* Full width for better UX */
+    justify-content: center;
+    transition: background 0.3s ease;
+    display: flex; /* Ensure flex layout */
+  }
+
+  /* Hover effect for toggle button */
+  #buses .bus-switcher-toggle:hover {
+    background: linear-gradient(135deg, rgba(0, 4, 40, 0.85), rgba(0, 4, 40, 0.75));
+  }
+
+
+  /* Hide the bus-switcher-menu by default on mobile/tablet */
+  #buses .bus-switcher-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(0, 4, 40, 0.95), rgba(0, 4, 40, 0.85));
+    padding: 10px 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  /* Show the bus-switcher-menu when active */
+  #buses .bus-switcher.active .bus-switcher-menu {
+    display: flex;
+    max-height: 1000px; 
+    opacity: 1;
+  }
+
+  /* Adjust bus buttons in the menu */
+  #buses .bus-switcher-menu .bus-btn {
+    width: 100%;
+    margin: 5px 0;
+    justify-content: flex-start;
+    padding-left: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Active bus button styling */
+  #buses .bus-switcher-menu .bus-btn.active {
+    background: #003d80; /* Darker blue for active state */
+  }
+
+  /* Hover effect for bus buttons */
+  #buses .bus-switcher-menu .bus-btn:hover {
+    background: #0069d9;
+    transform: scale(1.05);
+  }
+
+
+  /* Optional: Style navigation buttons (if re-enabled) */
+  #buses .button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+ 
+  #buses .slide .item:nth-child(3) {
+    left: 95%;
+  }
+  #buses .slide .item:nth-child(2) .content 
+  {
+    display: none !important;
+  }
+  #buses .slide .item:nth-child(4) .content 
+  {
+    display: none !important;
   }
 }
+
+
+
+
 
 @media (max-width: 768px) {
   #buses .slide {
     gap: 15px;
   }
-
+  #buses .slide .item:nth-child(3) {
+    left: 85%;
+  }
   #buses .item {
     width: 45%;
     height: auto;
@@ -183,15 +280,6 @@
     font-size: 0.9rem;
   }
 
-  #buses .button button {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-
-  #buses .bus-switcher button {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-  }
   #buses .slide .item:nth-child(2) .content 
   {
     display: none;
@@ -202,32 +290,41 @@
   #buses .item {
     width: 100%;
   }
-  #buses .button button,
-  #buses .bus-switcher button {
-    font-size: 0.8rem;
-    padding: 6px 12px;
+  #buses .bus-switcher-menu .bus-btn{
+    font-size: 0.7rem !important;
   }
-  #buses .button .nav-button-btn-kontakt {
-    width: 200px;
+   /* Show the bus-switcher-toggle button */
+   #buses .bus-switcher-toggle {
+    display: inline-block !important;
+    color: #fff;
+    border: none;
+    font-size: 0.7rem;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 30px;
+    width: 100%; /* Full width for better UX */
+    justify-content: center;
+    transition: background 0.3s ease;
+    display: flex; /* Ensure flex layout */
   }
-  #buses .slide .item:nth-child(2) .content 
+
+  #buses .button .nav-button-btn-kontakt, #buses .button .nav-button-btn
   {
-    display: none;
+    width: 100%;
   }
- 
-  #buses .bus-switcher-menu .bus-btn {
-    width: 100% !important;
-    margin: 10px 0 !important;
-    padding: 10px !important;
-    font-size: 0.9rem !important;
-    justify-content: center !important;
-    text-align: center !important;
-    border-radius: 20px !important;
-    align-items: center !important;
-}
+  .button-wrapper-buses {
+    width: 0;
+  }
 #buses .slide .item:nth-child(3) {
   left: 90%;
 }
+#buses .button .prev,
+  #buses .button .next {
+    display: none; /* Ensure they are hidden */
+  }
+  #buses .button .nav-button-btn {
+    display: none;
+  }
 }
 
 /* Additional styling for bus switcher inside autokary section */
@@ -289,20 +386,33 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  /* Show the bus-switcher-toggle on mobile */
+  #buses .button button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  /* Adjust bus switcher buttons */
+  #buses .bus-switcher button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  /* Show the bus-switcher-toggle button */
   #buses .bus-switcher-toggle {
-    display: inline-block;
+    display: inline-block !important;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 30px;
+    width: 100%; /* Full width for better UX */
+    justify-content: center;
+    transition: background 0.3s ease;
+    display: flex; /* Ensure flex layout */
   }
-  /* Hide the prev and next buttons */
-  #buses .button .prev,
-  #buses .button .next {
-    display: none;
-  }
-  #buses .content .name,
-  #buses .item .content {
-    display: none;
-  }
-  /* Hide the bus-switcher-menu by default on mobile */
+
+  /* Hide the bus-switcher-menu by default on mobile/tablet */
   #buses .bus-switcher-menu {
     display: none;
     flex-direction: column;
@@ -313,25 +423,53 @@
     background: linear-gradient(135deg, rgba(0, 4, 40, 0.95), rgba(0, 4, 40, 0.85));
     padding: 10px 0;
     z-index: 1000;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
   }
 
   /* Show the bus-switcher-menu when active */
   #buses .bus-switcher.active .bus-switcher-menu {
     display: flex;
+    max-height: 1000px; 
+    opacity: 1;
   }
 
-  /* Adjust bus buttons in mobile menu */
+  /* Adjust bus buttons in the menu */
   #buses .bus-switcher-menu .bus-btn {
     width: 100%;
     margin: 5px 0;
     justify-content: flex-start;
     padding-left: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
   }
 
-  /* Hide the 'Oferta' button on mobile */
-  #buses .button .nav-button-btn {
-    display: none;
+  /* Active bus button styling */
+  #buses .bus-switcher-menu .bus-btn.active {
+    background: #003d80; /* Darker blue for active state */
   }
+
+  /* Hover effect for bus buttons */
+  #buses .bus-switcher-menu .bus-btn:hover {
+    background: #0069d9;
+    transform: scale(1.05);
+  }
+
+
+  /* Optional: Style navigation buttons (if re-enabled) */
+  #buses .button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
 }
 
 /* Animations */

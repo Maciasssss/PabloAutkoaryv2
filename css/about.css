@@ -198,43 +198,131 @@
   }
 }
 
+
 /* Responsive Adjustments remain the same */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
+  #about {
+    padding: 80px 15px;
+  }
+
   #about h1 {
     font-size: 2.5rem;
+    margin-bottom: 30px;
   }
 
   .features {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
+  }
+
+  .feature {
+    padding: 25px 15px;
+  }
+
+  .feature .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .feature h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .feature p {
+    font-size: 1rem;
   }
 
   .intro-text {
     font-size: 1.2rem;
     padding: 30px;
+    max-width: 800px;
+  }
+
+  .intro-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
   }
 }
-
-@media (max-width: 767px) {
+/* Mobile Landscape (767px and below) */
+@media (max-width: 768px) {
   #about h1 {
     font-size: 2rem;
   }
 
   .features {
-    gap: 20px;
+    display: flex; /* Change to flex or block as desired */
+    flex-direction: column; /* Stack features vertically */
+    gap: 30px; /* Adjust spacing between items */
+  }
+
+  .feature {
+    padding: 20px 10px;
+  }
+
+  .feature .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .feature h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .feature p {
+    font-size: 0.95rem;
   }
 
   .intro-text {
     font-size: 1.1rem;
+    padding: 25px;
+    max-width: 700px;
+  }
+
+  .intro-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
   }
 }
 
+/* Mobile Portrait (480px and below) */
 @media (max-width: 480px) {
   #about h1 {
     font-size: 1.8rem;
   }
 
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature {
+    padding: 15px 10px;
+  }
+
+  .feature .icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .feature h2 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+  }
+
   .intro-text {
     font-size: 1rem;
     padding: 20px;
+    max-width: 100%;
+  }
+
+  .intro-text h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
   }
 }

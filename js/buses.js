@@ -18,31 +18,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Scania Irizar - Widok z przodu',
             },
             {
-                image: 'images/Scania_irizar/2.jpg',
+                image: 'images/Scania_Irizar/2.jpg',
                 name: 'Scania Irizar - Widok z boku',
             },
             {
-                image: 'images/Scania_irizar/3.jpg',
+                image: 'images/Scania_Irizar/3.jpg',
                 name: 'Scania Irizar - Widok z tyłu',
             },
             {
-                image: 'images/Scania_irizar/4.jpg',
+                image: 'images/Scania_Irizar/4.jpg',
                 name: 'Scania Irizar - Widok z boku',
             },
             {
-                image: 'images/Scania_irizar/5.jpg',
+                image: 'images/Scania_Irizar/5.jpg',
                 name: 'Scania Irizar - Wnętrze',
             },
             {
-                image: 'images/Scania_irizar/6.jpg',
+                image: 'images/Scania_Irizar/6.jpg',
                 name: 'Scania Irizar - Korytarz',
             },
             {
-                image: 'images/Scania_irizar/7.jpg',
+                image: 'images/Scania_Irizar/7.jpg',
                 name: 'Scania Irizar - Siedzenia',
             },
             {
-                image: 'images/Scania_irizar/8.jpg',
+                image: 'images/Scania_Irizar/8.jpg',
                 name: 'Scania Irizar - Korytarz',
             }
         ],
@@ -202,10 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
       updateGallery(selectedBus);
 
       // Close the bus switcher menu on mobile after selection
-      if (window.innerWidth <= 768 && busSwitcher.classList.contains('active')) {
+      if (window.innerWidth >= 200 && window.innerWidth <= 1440 && busSwitcher.classList.contains('active')) {
         busSwitcher.classList.remove('active');
         busSwitcherToggle.setAttribute('aria-expanded', 'false');
-      }
+    }
     });
   });
 
@@ -218,12 +218,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Bus Switcher Toggle Functionality for mobile
   if (busSwitcherToggle) {
-    busSwitcherToggle.addEventListener('click', () => {
+    busSwitcherToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       busSwitcher.classList.toggle('active');
       const expanded = busSwitcher.classList.contains('active');
       busSwitcherToggle.setAttribute('aria-expanded', expanded);
     });
-
+    
+    
     // Close the bus switcher menu when clicking outside
     document.addEventListener('click', (e) => {
       if (
