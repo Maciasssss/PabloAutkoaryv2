@@ -36,7 +36,7 @@ html, body {
 }
 @media screen and (max-width: 768px) {
   .section {
-    height: auto; 
+    height: 100vh; 
     min-height: 100vh; 
     padding-top: calc(var(--navbar-height) + 20px); 
     padding-bottom: 20px; 
@@ -44,6 +44,6 @@ html, body {
   }
   html, body {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden; /* lock page scroll; sections control their own scrolling */
   }
 }

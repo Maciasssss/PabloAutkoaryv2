@@ -1,241 +1,177 @@
+// buses.js
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecting necessary DOM elements
-    const nextButton = document.querySelector('#buses .next');
-    const prevButton = document.querySelector('#buses .prev');
-    const slide = document.querySelector('#buses .slide');
-    const items = document.querySelectorAll('#buses .slide .item');
-    const busButtons = document.querySelectorAll('#buses .bus-switcher .bus-btn');
-    const slideItems = document.querySelectorAll('#buses .slide .item');
-    const busSwitcher = document.querySelector('#buses .bus-switcher');
-    const busSwitcherToggle = document.querySelector('#buses .bus-switcher-toggle');
-    let touchStartX = 0;
-    let touchEndX = 0;
+    // Main element selections
+    const menuContainer = document.querySelector('#buses .buses-menu');
+    const heroImg = document.querySelector('#buses .buses-hero-image');
+    const scrollArrow = document.querySelector('#buses .scroll-down-arrow');
+
+    // NEW element selections
+    const mobileMenuToggle = document.querySelector('#buses .buses-menu-toggle');
+    const busInfoName = document.querySelector('#buses .bus-info-name');
+    const busInfoButton = document.querySelector('#buses .bus-info-button');
 
     const busData = {
-        bus2: [
-            {
-                image: 'images/Scania_Irizar/1.jpg',
-                name: 'Scania Irizar - Widok z przodu',
-            },
-            {
-                image: 'images/Scania_Irizar/2.jpg',
-                name: 'Scania Irizar - Widok z boku',
-            },
-            {
-                image: 'images/Scania_Irizar/3.jpg',
-                name: 'Scania Irizar - Widok z tyłu',
-            },
-            {
-                image: 'images/Scania_Irizar/4.jpg',
-                name: 'Scania Irizar - Widok z boku',
-            },
-            {
-                image: 'images/Scania_Irizar/5.jpg',
-                name: 'Scania Irizar - Wnętrze',
-            },
-            {
-                image: 'images/Scania_Irizar/6.jpg',
-                name: 'Scania Irizar - Korytarz',
-            },
-            {
-                image: 'images/Scania_Irizar/7.jpg',
-                name: 'Scania Irizar - Siedzenia',
-            },
-            {
-                image: 'images/Scania_Irizar/8.jpg',
-                name: 'Scania Irizar - Korytarz',
-            }
-        ],
-        bus1: [
-            {
-                image: 'images/Autosan_Gemini/1.jpg',
-                name: 'Autosan Gemini - Widok z przodu',
-            },
-            {
-                image: 'images/Autosan_Gemini/2.jpg',
-                name: 'Autosan Gemini - Widok z boku',
-            },
-            {
-                image: 'images/Autosan_Gemini/3.jpg',
-                name: 'Autosan Gemini - Widok z tyłu',
-            },
-            {
-                image: 'images/Autosan_Gemini/4.jpg',
-                name: 'Autosan Gemini - z tyłu',
-            },
-            {
-                image: 'images/Autosan_Gemini/1.jpg',
-                name: 'Autosan Gemini - Wnętrze',
-            },
-            {
-                image: 'images/Autosan_Gemini/1.jpg',
-                name: 'Autosan Gemini - Siedzenia',
-            },
-            {
-                image: 'images/Autosan_Gemini/1.jpg',
-                name: 'Autosan Gemini - Korytarz',
-            },
-            {
-                image: 'images/Autosan_Gemini/1.jpg',
-                name: 'Autosan Gemini - Przestrzeń bagażowa',
-            }
-        ],
-        bus3: [
-            {
-                image: 'images/Van_Hool/1.jpg',
-                name: 'Van Hool - Widok z przodu',
-            },
-            {
-                image: 'images/Van_Hool/2.jpg',
-                name: 'Van Hool - Widok z boku',
-            },
-            {
-                image: 'images/Van_Hool/3.jpg',
-                name: 'Van Hool - Widok z tyłu',
-            },
-            {
-                image: 'images/Van_Hool/4.jpg',
-                name: 'Van Hool - Widok z boku',
-            },
-            {
-                image: 'images/Van_Hool/5.jpg',
-                name: 'Van Hool - Wnętrze',
-            },
-            {
-                image: 'images/Van_Hool/6.jpg',
-                name: 'Van Hool - Pablo',
-            },
-            {
-                image: 'images/Van_Hool/7.jpg',
-                name: 'Van Hool - Siedzenia',
-            },
-            {
-                image: 'images/Van_Hool/8.jpg',
-                name: 'Van Hool - Siedzenia',
-            }
-        ],
-        // Add more bus data here...
+        bus1: {
+            fullName: 'Autosan Gemini 33',
+            photos: [
+                { image: 'images/Autosan_Gemini/1.jpg', name: 'Autosan Gemini - Widok z przodu' },
+                { image: 'images/Autosan_Gemini/2.jpg', name: 'Autosan Gemini - Widok z boku' },
+                { image: 'images/Autosan_Gemini/3.jpg', name: 'Autosan Gemini - Widok z tyłu' },
+                { image: 'images/Autosan_Gemini/4.jpg', name: 'Autosan Gemini - z tyłu' }
+            ]
+        },
+        bus2: {
+            fullName: 'Scania Irizar 50',
+            photos: [
+                { image: 'images/Scania_Irizar/1.jpg', name: 'Scania Irizar - Widok z przodu' },
+                { image: 'images/Scania_Irizar/2.jpg', name: 'Scania Irizar - Widok z boku' },
+                { image: 'images/Scania_Irizar/3.jpg', name: 'Scania Irizar - Widok z tyłu' },
+                { image: 'images/Scania_Irizar/4.jpg', name: 'Scania Irizar - Widok z boku' }
+            ]
+        },
+        bus3: {
+            fullName: 'Van Hool Alicron 64',
+            photos: [
+                { image: 'images/Van_Hool55/1.jpg', name: 'Van Hool - Widok z przodu' },
+                { image: 'images/Van_Hool55/2.jpg', name: 'Van Hool - Widok z boku' },
+                { image: 'images/Van_Hool55/3.jpg', name: 'Van Hool - Widok z tyłu' },
+                { image: 'images/Van_Hool55/4.jpg', name: 'Van Hool - Widok z boku' }
+            ]
+        },
+        bus4: {
+            fullName: 'Van Hool Alicron 64',
+            photos: [
+                { image: 'images/Van_Hool64/1.jpg', name: 'Van Hool - Widok z przodu' },
+                { image: 'images/Van_Hool64/2.jpg', name: 'Van Hool - Widok z boku' },
+                { image: 'images/Van_Hool64/3.jpg', name: 'Van Hool - Widok z tyłu' },
+                { image: 'images/Van_Hool64/4.jpg', name: 'Van Hool - Widok z boku' }
+            ]
+        }
     };
 
-  
- // Functions to handle slide transitions
- function nextSlide() {
-    slide.appendChild(slide.firstElementChild);
-  }
-
-  function prevSlide() {
-    slide.insertBefore(slide.lastElementChild, slide.firstElementChild);
-  }
-
-  // Event listeners for navigation buttons
-  if (nextButton && prevButton) {
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-  }
-
-  // Touch events for mobile swipe functionality
-  slide.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-
-  slide.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleGesture();
-  });
-
-  function handleGesture() {
-    if (touchEndX < touchStartX - 50) {
-      // Swiped left
-      nextSlide();
+    function renderPhotos(busKey) {
+        const photosRoot = document.querySelector(`#${busKey}-photos`);
+        if (!photosRoot) return;
+        photosRoot.innerHTML = '';
+        const photos = busData[busKey]?.photos || [];
+        photos.slice(1).forEach((p, idx) => {
+            const img = document.createElement('img');
+            img.src = p.image;
+            img.alt = p.name || `${busKey} ${idx + 2}`;
+            img.loading = 'lazy';
+            photosRoot.appendChild(img);
+        });
     }
-    if (touchEndX > touchStartX + 50) {
-      // Swiped right
-      prevSlide();
-    }
-  }
 
-  // Function to update the gallery based on selected bus
-  function updateGallery(bus) {
-    const data = busData[bus];
+    function setActiveBus(busKey) {
+        document.querySelectorAll('#buses .buses-menu-btn').forEach(b => b.classList.remove('active'));
+        const activeBtn = document.querySelector(`#buses .buses-menu-btn[data-bus="${busKey}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
 
-    slideItems.forEach((item, index) => {
-      if (data[index]) {
-        const imageUrl = data[index].image;
-        item.style.backgroundImage = `url(${imageUrl})`;
-        item.setAttribute('data-src', imageUrl);
+        const bus = busData[busKey];
+        if (!bus) return;
 
-        const content = item.querySelector('.content');
-        if (content) {
-          const nameElem = content.querySelector('.name');
-          nameElem.textContent = data[index].name;
+        // Update hero image
+        const heroData = bus.photos[0];
+        if (heroImg && heroData) {
+            heroImg.src = heroData.image;
+            heroImg.alt = heroData.name;
         }
 
-        item.style.opacity = 1;
-        item.style.pointerEvents = 'auto';
+        // NEW: Update the bus name in the overlay
+        if (busInfoName) {
+            busInfoName.textContent = bus.fullName;
+        }
 
-        lazyLoadImage(item);
-      } else {
-        item.style.opacity = 0;
-        item.style.pointerEvents = 'none';
-      }
-    });
-  }
-
-  // Lazy loading images
-  function lazyLoadImage(item) {
-    const imgSrc = item.getAttribute('data-src');
-    const img = new Image();
-    img.src = imgSrc;
-
-    img.onload = () => {
-      item.style.backgroundImage = `url(${imgSrc})`;
-    };
-  }
-
-  // Event listener for bus switcher buttons
-  busButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      busButtons.forEach((btn) => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const selectedBus = button.getAttribute('data-bus');
-      updateGallery(selectedBus);
-
-      // Close the bus switcher menu on mobile after selection
-      if (window.innerWidth >= 200 && window.innerWidth <= 1440 && busSwitcher.classList.contains('active')) {
-        busSwitcher.classList.remove('active');
-        busSwitcherToggle.setAttribute('aria-expanded', 'false');
+        // Show/hide correct gallery
+        document.querySelectorAll('.bus-photos').forEach(gallery => {
+            gallery.style.display = 'none';
+        });
+        const activeGallery = document.querySelector(`#${busKey}-photos`);
+        if (activeGallery) {
+            activeGallery.style.display = 'block';
+        }
+        
+        setupImageObserver();
     }
-    });
-  });
-
-  // Initialize gallery with the first bus on page load
-  const initialBusButton = document.querySelector('#buses .bus-switcher .bus-btn.active');
-  if (initialBusButton) {
-    const initialBus = initialBusButton.getAttribute('data-bus');
-    updateGallery(initialBus);
-  }
-
-  // Bus Switcher Toggle Functionality for mobile
-  if (busSwitcherToggle) {
-    busSwitcherToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      busSwitcher.classList.toggle('active');
-      const expanded = busSwitcher.classList.contains('active');
-      busSwitcherToggle.setAttribute('aria-expanded', expanded);
-    });
     
+    function setupImageObserver() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { root: document.querySelector('#buses'), threshold: 0.15 });
+
+        document.querySelectorAll('#buses .buses-hero-image, #buses .bus-photos img').forEach(img => {
+            observer.observe(img);
+        });
+    }
+
+    function init() {
+        renderPhotos('bus1');
+        renderPhotos('bus2');
+        renderPhotos('bus3');
+        setActiveBus('bus1');
     
-    // Close the bus switcher menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (
-        !busSwitcher.contains(e.target) &&
-        busSwitcher.classList.contains('active') &&
-        !busSwitcherToggle.contains(e.target)
-      ) {
-        busSwitcher.classList.remove('active');
-        busSwitcherToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
+        // Main menu button logic
+        document.querySelectorAll('#buses .buses-menu-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.getAttribute('data-bus');
+                if (!key) return;
+                setActiveBus(key);
+                document.querySelector('#buses').scrollTo({ top: 0, behavior: 'smooth' });
+                if (menuContainer.classList.contains('is-open')) {
+                    menuContainer.classList.remove('is-open');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    
+        // Mobile menu toggle logic
+        mobileMenuToggle?.addEventListener('click', () => {
+            const isOpen = menuContainer.classList.toggle('is-open');
+            mobileMenuToggle.setAttribute('aria-expanded', isOpen);
+        });
+    
+        // --- REFINED SCROLL LOGIC ---
+        let lastScroll = 0;
+        const busesSection = document.querySelector('#buses');
+        const navbar = document.querySelector('.navbar');
+        
+        busesSection?.addEventListener('scroll', () => {
+            const currentScroll = busesSection.scrollTop;
+    
+            // Hide the small down-arrow after a little scroll
+            if (scrollArrow) {
+                scrollArrow.classList.toggle('hidden', currentScroll > 50);
+            }
+    
+            // Check if we are at the top of the page
+            if (currentScroll <= 0) {
+                navbar?.classList.remove('hidden');
+                menuContainer?.classList.remove('hidden');
+                lastScroll = 0;
+                return;
+            }
+    
+            // Determine scroll direction
+            if (currentScroll > lastScroll) {
+                // Scrolling Down: Hide the menus
+                navbar?.classList.add('hidden');
+                menuContainer?.classList.add('hidden');
+            } else {
+                // Scrolling Up: Show the menus
+                navbar?.classList.remove('hidden');
+                menuContainer?.classList.remove('hidden');
+            }
+    
+            // Update lastScroll for the next scroll event
+            lastScroll = currentScroll;
+        });
+    }
+
+    init();
 });

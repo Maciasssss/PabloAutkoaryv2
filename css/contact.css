@@ -34,7 +34,7 @@
   height: 100%;
   left: 0;
   top: 0;
-  background: url("../images/MainPage/1.jpg") no-repeat center;
+  background: url("../images/MainPage/1.JPG") no-repeat center;
   background-size: cover;
   z-index: -1;
 }
@@ -52,7 +52,7 @@
 }
 
 .left-Picture {
-  background: url("../images/MainPage/1.jpg") no-repeat center;
+  background: url("../images/MainPage/zdjecie_wizytówka-media.JPG") no-repeat center;
   background-size: cover;
   height: 100%;
   position: relative; 
@@ -106,7 +106,7 @@
   position: relative;
   padding: 0 0 10px;
   margin-bottom: 30px;
-  color: var(--argentinian-blue); 
+  color: var(--antiflash-white); 
   text-align: center;
   font-size: 2rem;
   font-family: 'ICA Rubrik', sans-serif;
@@ -412,4 +412,5 @@ textarea.field {
   .closebtn {
     font-size: 18px;
   }
+  
 }
